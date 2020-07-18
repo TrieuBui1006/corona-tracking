@@ -7,12 +7,14 @@ import CountUp from 'react-countup'
 //classnames
 import cx from 'classnames'
 
+import { Spinner } from '../index'
+
 //Styles
 import Styles from './Cards.module.css'
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   if (!confirmed) {
-    return 'Loading...'
+    return <Spinner />
   }
   return (
     <div className={Styles.container}>
